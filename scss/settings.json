@@ -1,0 +1,17 @@
+{
+    "liveServer.settings.donotShowInfoMsg": true,
+    "files.autoSave": "onFocusChange",
+    "editor.fontSize": 20,
+    "editor.minimap.enabled": false,
+    "liveSassCompile.settings.formats": [
+        
+
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "~/../css/", //저장위치를 변경
+            "savePathReplacementPairs": null
+        }
+    ],
+    "liveSassCompile.settings.generateMap": false
+}
