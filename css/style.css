@@ -22,6 +22,7 @@ header {
   width: 100%;
   padding: 20px 0;
   color: #fff;
+  transition: all 0.3s ease-in-out;
 }
 header .inner {
   padding: 0 100px;
@@ -42,7 +43,19 @@ header #logo a {
   transition: all 0.2s ease-in-out;
 }
 header #logo a:hover {
-  background-position: 0 bottom;
+  background-position: 0 bottom !important;
+}
+header.scrolled {
+  background-color: #fff;
+  color: #333;
+  padding: 0;
+  border-bottom: 1px solid #eee;
+}
+header.scrolled #logo a {
+  background-position: 0 -28px;
+}
+header.scrolled #gnb a::after {
+  background: #333;
 }
 
 #gnb li {
@@ -97,4 +110,28 @@ header #logo a:hover {
 }
 #sns a {
   padding: 15px 5px;
+}
+
+#main_view .slider .view {
+  width: 100%;
+  height: 100vh;
+  background: center/cover no-repeat;
+}
+#main_view .slider .view1 {
+  background-image: url("../images/view01.jpg");
+}
+#main_view .slider .view2 {
+  background-image: url("../images/view02.jpg");
+}
+#main_view .slider .view3 {
+  background-image: url("../images/view03.jpg");
+}
+#main_view .slider .view4 {
+  background-image: url("../images/view04.jpg");
+}
+#main_view .slider .view5 {
+  background-image: url("../images/view05.jpg");
+}
+#main_view .slider .view6 {
+  background-image: url("../images/view06.jpg");
 }
