@@ -20,31 +20,32 @@ function ScrollGiveClass(target="body", options={}){
     let win_h = 0;
     let base = 0;
 	
-    
+    let item_top = 0;
     //객체 병합
     Object.assign(obj, options);    
    
     window.addEventListener('load', function() {
         el_list = document.querySelectorAll(target); 
         el_list.forEach((item,i)=>{ 
+            item_top = item.getBoundingClientRect().top + window.scrollY;
+            if(!isNaN(obj.baseline)) item_top = obj.baseline;
+
             el_All.push({
                 target:item,
-                top: item.getBoundingClientRect().top + window.scrollY,
+                top: item_top,
             });                     
         });
         
         win_h = window.innerHeight;
         
         if(obj.baseline=='bottom') base += win_h;
-        if(obj.baseline=='middle') base += win_h / 2;                      
-        if(!isNaN(obj.baseline)) base = obj.baseline;
-
+        if(obj.baseline=='middle') base += win_h / 2;                     
+        
         if( 1>obj.add && obj.add>-1 ){
             obj.add = win_h * obj.add;
         }                            
 
         base += obj.add;    
-        
        	scrolled();
     } );
 
@@ -64,4 +65,4 @@ function ScrollGiveClass(target="body", options={}){
             }
         });       
     }    
-};
+}; 
