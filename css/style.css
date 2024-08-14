@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/*변수선언*/
 ::-moz-selection {
   color: #fff;
   background: #20bec6;
@@ -10,7 +9,7 @@
 }
 
 html {
-  font-family: "Montserrat", "NanumBarunGothic,sans-serif";
+  font-family: "Montserrat", "NanumBarunGothic", sans-serif;
   font-size: 12px;
 }
 
@@ -45,7 +44,7 @@ header #logo {
 header #logo a {
   width: 100px;
   height: 28px;
-  background: url("../images/logo.png") no-repeat;
+  background: url(../images/logo.png) no-repeat;
   background-size: 100% auto;
   text-indent: -9999px;
   transition: all 0.2s ease-in-out;
@@ -54,7 +53,7 @@ header #logo a:hover {
   background-position: 0 bottom !important;
 }
 header.scrolled {
-  background-color: #fff;
+  background: #fff;
   color: #333;
   padding: 0;
   border-bottom: 1px solid #eee;
@@ -79,8 +78,8 @@ header.scrolled #gnb a::after {
   content: "";
   display: block;
   background: #fff;
-  width: 0;
   height: 2px;
+  width: 0;
   transition: all 0.2s ease-in-out;
 }
 #gnb a:hover::after {
@@ -88,6 +87,7 @@ header.scrolled #gnb a::after {
 }
 #gnb .sub {
   display: none;
+  padding-bottom: 20px;
 }
 #gnb .sub li {
   float: none;
@@ -138,12 +138,12 @@ header.scrolled #gnb a::after {
 #main_view .slider .view::before {
   content: "";
   position: absolute;
-  opacity: 0.5;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
   bottom: 0;
   background: #000;
+  opacity: 0.5;
 }
 #main_view .slider .view1 {
   background-image: url("../images/view01.jpg");
@@ -175,7 +175,7 @@ header.scrolled #gnb a::after {
 #main_view .slider .text h3 {
   font-size: 50px;
   line-height: 1.1;
-  font-weight: normal;
+  font-weight: 300;
 }
 #main_view .slider .text p {
   font-size: 18px;
@@ -196,7 +196,7 @@ header.scrolled #gnb a::after {
 }
 #main_view .slider .text i {
   display: inline-block;
-  vertical-align: 1px;
+  vertical-align: -1px;
   padding-left: 6px;
 }
 #main_view .slider .swiper-slide-active .text {
@@ -240,22 +240,13 @@ header.scrolled #gnb a::after {
 #works .list {
   display: flex;
   flex-wrap: wrap;
-  /*
-   li:nth-child(1)::before{
-          background-image:url("../images/works/work01.jpg");
-   li:nth-child(2)::before{
-          background-image:url("../images/works/work02.jpg");
-   li:nth-child(3)::before{
-          background-image:url("../images/works/work03.jpg");
-          ......
-  */
 }
 #works .list li {
   background: #000;
   border: 1px solid #fff;
   box-sizing: border-box;
-  /* flex-grow:커지는 비율(기본값:0); flex-shrink : 작아지는 비율(기본값:1); flex-basis:너비 */
-  width: 25%;
+  /*flex-grow :커지는 비율; flex-shrink:작아지는 비율; flex-basis:너비;
+  flex(커지는 비율, 작아지는 비율, 너비); 작성 한번에 작성 가능*/
   flex: 0 0 25%;
   overflow: hidden;
   position: relative;
@@ -363,6 +354,7 @@ header.scrolled #gnb a::after {
 }
 #about .inner {
   padding: 100px 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 #about h3 {
   font-size: 30px;
@@ -374,4 +366,98 @@ header.scrolled #gnb a::after {
   margin: 0 auto 30px;
   font-size: 24px;
   line-height: 1.42;
+  font-weight: 300;
+  word-break: keep-all;
+}
+#about a {
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  border: 1px solid #fff;
+}
+#about a:hover {
+  background: #fff;
+  color: #222;
+}
+
+#press {
+  background: #eee;
+  padding: 50px 0;
+  overflow: hidden;
+}
+#press h3 {
+  margin: 0 0 50px 120px;
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+}
+#press h3 a:hover {
+  text-decoration: underline;
+}
+#press .inner {
+  padding: 20px 50px;
+}
+#press .slider {
+  display: flex;
+}
+#press .slider .box {
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+}
+#press .slider .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px #aaa;
+}
+#press .slider li {
+  flex-shrink: 0;
+}
+#press .slider img {
+  width: 100%;
+}
+#press .slider h4 {
+  padding: 10px 15px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#press .slider h4:hover {
+  color: #20bec6;
+}
+#press .slider h4 + p {
+  padding: 0 15px 10px;
+  font-size: 10px;
+}
+#press .slider .more {
+  display: block;
+  max-width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+  color: #222;
+  margin: 0 auto;
+  border: 1px solid #222;
+}
+#press .slider .more:hover {
+  background: #222;
+  color: #fff;
+}
+#press .dot {
+  margin-top: 40px;
+  text-align: center;
+}
+#press .dot span {
+  display: inline-block;
+  margin: 0 5px;
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.3;
+}
+#press .dot span.active {
+  opacity: 1;
 }
